@@ -32,17 +32,7 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 		String osName = System.getProperty("os.name");
 
-		if (osName.startsWith("Windows")) {
-			if (browserName.equalsIgnoreCase("chrome")) {
-				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "/browsers/chromedriver.exe");
-				driver = new ChromeDriver();
-			} else if (browserName.equalsIgnoreCase("FF")) {
-				System.setProperty("webdriver.gecko.driver",
-						System.getProperty("user.dir") + "/browsers/geckodriver.exe");
-				driver = new FirefoxDriver();
-			}
-		} else if (osName.startsWith("Mac")) {
+		if (osName.startsWith("Mac")) {
 			if (browserName.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "/browsers/chromedriver");
